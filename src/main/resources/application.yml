@@ -1,0 +1,20 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: eureka
+eureka:
+  client:
+    service-url:
+      #注册中心地址
+      defaultZone: http://localhost:${server.port}
+    #服务端不进行注册
+    register-with-eureka: false
+    fetch-registry: false
+  server:
+    #禁用自检，仅建议开发环境使用
+    enable-self-preservation: false
+  instance:
+    hostname: localhost
+logging:
+  file: eureka.log
